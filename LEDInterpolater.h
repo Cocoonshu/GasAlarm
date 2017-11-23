@@ -15,9 +15,11 @@ class LEDInterpolater {
     
   private:
     unsigned long mDuration;
-    unsigned long mStartTime;
+    unsigned long mLastTime;
     unsigned long mNormDuration;
     double        mCurrentValue;
+    double        mSpeed;
+    double        mPhase;
 };
 
 #endif
