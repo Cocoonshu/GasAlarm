@@ -1,5 +1,8 @@
 #include "LEDInterpolater.h"
 #include "LEDStepper.h"
+#include "Sounder.h"
+
+#define SERIAL_RENDER
 
 #define MQ6_ADC_IN           17
 #define MUTE_PIN             2
@@ -13,8 +16,11 @@
 #define LED_G_MAX            0.3
 #define LED_B_MAX            0.15
 
-#define WARNING_VOLT         2.5
-#define ALARM_VOLT           3.0
+#define WARMING_VOLT        -1.0
+#define ZERO_VOLT            0.0
+#define WARNING_VOLT         2.0
+#define ALARM_VOLT           2.5
+#define TEST_VOLT            5.0
 #define WARM_UP_TIMEOUT      1000 * 15
 #define SAMPLE_TIMEOUT       1000 * 1
 #define COLOR_CHANGE_TIMEOUT 1000
@@ -46,10 +52,12 @@ UI sUI_Monitor(0xFFFFFF, 6000, 0.1f, 0.8f); // White
 UI sUI_Warning(0xFF1800, 1000, 0.1f, 0.8f); // Oriange
 UI sUI_Alarm  (0xFF0000,  500, 0.0f, 1.0f); // Red
 
+bool            mNotifyMute     = false;
 unsigned long   mWarmingUpTime  = 0;
 unsigned long   mLastSampleTime = 0;
 LEDInterpolater mLEDInterpolater(sUI_WarmUp.duration);
 LEDStepper      mLEDStepper(COLOR_CHANGE_TIMEOUT);
+Sounder         mSounder(ALARM_PIN);
 
 void setup() {
   Serial.begin(115200);
@@ -65,21 +73,55 @@ void setup() {
   analogWrite(LED_B_PIN, 0);
   analogWrite(ALARM_PIN, 0);
   mLEDInterpolater.begin();
+  mSounder.setType(ALARM_TYPE_SIN);
 
+#ifndef SERIAL_RENDER
   Serial.println("MQ-6 ready, warming up...");
+#endif
   mWarmingUpTime = millis();
 }
 
 void loop() {
   unsigned long now = millis();
+  uint8_t alarm = 0;
   float volt = adcSampling(now);
+  volt = checkTestMode(now, volt);
+  checkMuteMode(volt);
   updateRGBLight(now, volt);
-  updateAlarm(now, volt);
+  alarm = updateAlarm(now, volt);
+
+#ifdef SERIAL_RENDER
+  Serial.print(volt); Serial.print(","); Serial.println(alarm);
+#endif
+}
+
+float checkTestMode(unsigned long now, float volt) {
+  bool isTestMode = digitalRead(TEST_PIN) == LOW;
+  if (isTestMode) {
+#ifndef SERIAL_RENDER
+    Serial.print("[TestMode] ");
+#endif
+    return TEST_VOLT;
+  } else {
+#ifndef SERIAL_RENDER
+    Serial.print("[NormalMode] ");
+#endif
+    return volt;
+  }
+}
+
+void checkMuteMode(float volt) {
+  bool isMute = digitalRead(MUTE_PIN) == LOW;
+  if (isMute) {
+    mNotifyMute = true;
+  } else if (volt < WARNING_VOLT) {
+    mNotifyMute = false;
+  }
 }
 
 float adcSampling(unsigned long now) {
   if (abs(now - mWarmingUpTime) < WARM_UP_TIMEOUT) {
-    return;
+    return WARMING_VOLT;
   }
   if (abs(now - mLastSampleTime) < SAMPLE_TIMEOUT) {
     return;
@@ -87,9 +129,19 @@ float adcSampling(unsigned long now) {
     mLastSampleTime = now;
   }
 
-  int adc = analogRead(MQ6_ADC_IN);
+  int   adc  = analogRead(MQ6_ADC_IN);
   float volt = adc * 5.0f / 1024.0f;
-  //Serial.print("MQ6: "); Serial.print(volt); Serial.println("v");
+
+  if (debugFlag != DISABLE) {
+    volt = (debugFlag == WARM)    ? WARMING_VOLT : volt;
+    volt = (debugFlag == MONITOR) ? ZERO_VOLT    : volt;
+    volt = (debugFlag == WARN)    ? WARNING_VOLT : volt;
+    volt = (debugFlag == ALARM)   ? ALARM        : volt;
+#ifndef SERIAL_RENDER
+    Serial.print("MQ-6: "); Serial.print(volt); Serial.println("v");
+#endif
+  }
+  
   return volt;
 }
 
@@ -102,18 +154,8 @@ void updateRGBLight(unsigned long now, float volt) {
   uint8_t  currentRed   = 0;
   uint8_t  currentGreen = 0;
   uint8_t  currentBlue  = 0;
-  bool     isWarmingUp  = now - mWarmingUpTime < WARM_UP_TIMEOUT;
 
-  if (debugFlag != DISABLE) {
-    isWarmingUp = (debugFlag == WARM);
-    volt = (debugFlag == MONITOR) ? 1.0 : volt;
-    volt = (debugFlag == WARN)    ? 2.7 : volt;
-    volt = (debugFlag == ALARM)   ? 3.5 : volt;
-
-    Serial.print("[DEBUG] volt = ");Serial.println(volt);
-  }
-  
-  if (isWarmingUp) {
+  if (volt <= WARMING_VOLT) {
     mLEDInterpolater.setDuration(sUI_WarmUp.duration);
     currentAlpha = mLEDInterpolater.apply(sUI_WarmUp.minAlpha, sUI_WarmUp.maxAlpha);
     currentColor = sUI_WarmUp.color;
@@ -129,7 +171,7 @@ void updateRGBLight(unsigned long now, float volt) {
     mLEDInterpolater.setDuration(sUI_Alarm.duration);
     currentAlpha = mLEDInterpolater.apply(sUI_Alarm.minAlpha, sUI_Alarm.maxAlpha);
     currentColor = sUI_Alarm.color;
-  } 
+  }
 
   mLEDStepper.gotoDestination(currentColor);
   currentColor = mLEDStepper.getCurrent();
@@ -141,13 +183,20 @@ void updateRGBLight(unsigned long now, float volt) {
   analogWrite(LED_B_PIN, currentBlue);
 }
 
-void updateAlarm(unsigned long now, float volt) {
-
+uint8_t updateAlarm(unsigned long now, float volt) {
+  Serial.print("mNotifyMute = "); Serial.print(mNotifyMute);
+  Serial.print(", volt = "); Serial.println(volt);
+  if (!mNotifyMute && volt >= ALARM_VOLT) {
+    mSounder.begin();
+  } else {
+    mSounder.stop();
+  }
+  return mSounder.interpolate(now);
 }
 
 /**
- * Debug interface
- */
+   Debug interface
+*/
 void serialEvent() {
   while (Serial.available()) {
     char inChar = (char)Serial.read();
@@ -158,14 +207,18 @@ void serialEvent() {
         debugFlag = WARM;
       } else if (inputString.equalsIgnoreCase("monitor")) {
         debugFlag = MONITOR;
-      } else if (inputString.equalsIgnoreCase("alarm")) {
-        debugFlag = ALARM;
       } else if (inputString.equalsIgnoreCase("warn")) {
         debugFlag = WARN;
+      } else if (inputString.equalsIgnoreCase("alarm")) {
+        debugFlag = ALARM;
+      } else if (inputString.equalsIgnoreCase("mute")) {
+        mNotifyMute = true;
       } else {
         debugFlag = DISABLE;
       }
+#ifndef SERIAL_RENDER
       Serial.println(inputString);
+#endif
       inputString = "";
     }
   }
