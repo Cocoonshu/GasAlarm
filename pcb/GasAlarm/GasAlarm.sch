@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.4.0">
+<eagle version="8.4.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -8,20 +8,20 @@
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -30,8 +30,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -39,19 +39,19 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
-<layer number="50" name="dxf" color="7" fill="1" visible="yes" active="no"/>
-<layer number="51" name="tDocu" color="6" fill="1" visible="yes" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
-<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="yes" active="no"/>
-<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="yes" active="no"/>
-<layer number="56" name="wert" color="7" fill="1" visible="yes" active="no"/>
-<layer number="57" name="tCAD" color="7" fill="1" visible="yes" active="no"/>
-<layer number="59" name="tCarbon" color="7" fill="1" visible="yes" active="no"/>
-<layer number="60" name="bCarbon" color="7" fill="1" visible="yes" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
+<layer number="51" name="tDocu" color="6" fill="1" visible="no" active="no"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
+<layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
+<layer number="59" name="tCarbon" color="7" fill="1" visible="no" active="no"/>
+<layer number="60" name="bCarbon" color="7" fill="1" visible="no" active="no"/>
 <layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
@@ -834,153 +834,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <device name="">
 <technologies>
 <technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="SparkFun-Sensors">
-<description>&lt;h3&gt;SparkFun Sensors&lt;/h3&gt;
-This library contains sensors- accelerometers, gyros, compasses, magnetometers, light sensors, imagers, temp sensors, etc.
-&lt;br&gt;
-&lt;br&gt;
-We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
-&lt;br&gt;
-&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
-&lt;br&gt;
-&lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
-&lt;br&gt;
-&lt;br&gt;
-You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
-<packages>
-<package name="GAS_SENSOR">
-<description>&lt;h3&gt;Gas Sensors - MQ-3, MQ-4, MQ-6, MQ-7, MQ-8&lt;/h3&gt;
-&lt;p&gt;Footprint is orientation agnostic.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://cdn.sparkfun.com/datasheets/Sensors/Biometric/MQ-3%20ver1.3%20-%20Manual.pdf"&gt;Datasheet&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Specifications:
-&lt;ul&gt;
-&lt;li&gt;Pin Count: 6&lt;/li&gt;
-&lt;li&gt;Diameter: 14.5 mm&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Devices Using:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GAS_SENSOR&lt;/li&gt;
-&lt;/ul&gt;</description>
-<circle x="0" y="0" radius="8.4" width="0.2032" layer="21"/>
-<pad name="HA" x="-4.75" y="0" drill="1.016" diameter="1.9304"/>
-<pad name="HB" x="4.75" y="0" drill="1.016" diameter="1.9304"/>
-<pad name="A1" x="-3.35" y="3.35" drill="1.016" diameter="1.9304"/>
-<pad name="A2" x="-3.35" y="-3.35" drill="1.016" diameter="1.9304"/>
-<pad name="B2" x="3.35" y="-3.35" drill="1.016" diameter="1.9304"/>
-<pad name="B1" x="3.35" y="3.35" drill="1.016" diameter="1.9304"/>
-<hole x="0" y="0" drill="3"/>
-<text x="0" y="8.509" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-8.509" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
-</package>
-</packages>
-<symbols>
-<symbol name="MQ-3">
-<description>&lt;h3&gt;Gas Sensors - MQ-3, MQ-4, MQ-6, MQ-7, MQ-8&lt;/h3&gt;
-&lt;p&gt;Through-hole gas sensors with a heating coil and an analog output.&lt;/p&gt;</description>
-<wire x1="-7.62" y1="5.08" x2="-7.62" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="-7.62" y1="-2.54" x2="7.62" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="7.62" y1="-2.54" x2="7.62" y2="5.08" width="0.254" layer="94"/>
-<wire x1="7.62" y1="5.08" x2="-7.62" y2="5.08" width="0.254" layer="94"/>
-<pin name="A1" x="-10.16" y="2.54" visible="pin" length="short"/>
-<pin name="H1" x="-10.16" y="0" visible="pin" length="short"/>
-<pin name="B1" x="10.16" y="2.54" visible="pin" length="short" rot="R180"/>
-<pin name="H2" x="10.16" y="0" visible="pin" length="short" rot="R180"/>
-<text x="-7.62" y="5.334" size="1.778" layer="95" font="vector">&gt;Name</text>
-<text x="-7.62" y="-2.794" size="1.778" layer="96" font="vector" align="top-left">&gt;Value</text>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="GAS_SENSOR" prefix="GS">
-<description>&lt;h3&gt;Gas Sensors - MQ-3, MQ-4, MQ-6, MQ-7, MQ-8&lt;/h3&gt;
-&lt;p&gt;Through-hole gas sensors with a heating coil and an analog output.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://cdn.sparkfun.com/datasheets/Sensors/Biometric/MQ-3%20ver1.3%20-%20Manual.pdf"&gt;Example Datasheet&lt;/a&gt;&lt;/p&gt;
-&lt;h4&gt;SparkFun Products&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/8891"&gt;Gas Sensor Breakout Board&lt;/a&gt; (BOB-8891) - Breakout board compatible with all gas sensors.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/8880"&gt;Alcohol Gas Sensor - MQ-3&lt;/a&gt; (SEN-08880)&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/9404"&gt;Methane CNG Gas Sensor - MQ-4&lt;/a&gt; (SEN-09404)&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/9405"&gt;LPG Gas Sensor - MQ-6&lt;/a&gt; (SEN-09405)&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/9403"&gt;Carbon Monoxide Sensor - MQ-7&lt;/a&gt; (SEN-09403)&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/10916"&gt;Hydrogen Gas Sensor - MQ-8&lt;/a&gt; (SEN-10916)&lt;/li&gt;
-&lt;/ul&gt;</description>
-<gates>
-<gate name="G$1" symbol="MQ-3" x="0" y="0"/>
-</gates>
-<devices>
-<device name="MQ-3" package="GAS_SENSOR">
-<connects>
-<connect gate="G$1" pin="A1" pad="A1"/>
-<connect gate="G$1" pin="B1" pad="B1"/>
-<connect gate="G$1" pin="H1" pad="HA"/>
-<connect gate="G$1" pin="H2" pad="HB"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="PROD_ID" value="COMP-12216"/>
-<attribute name="SF_ID" value="SEN-08880"/>
-</technology>
-</technologies>
-</device>
-<device name="MQ-4" package="GAS_SENSOR">
-<connects>
-<connect gate="G$1" pin="A1" pad="A1"/>
-<connect gate="G$1" pin="B1" pad="B1"/>
-<connect gate="G$1" pin="H1" pad="HA"/>
-<connect gate="G$1" pin="H2" pad="HB"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="PROD_ID" value="COMP-11559"/>
-<attribute name="SF_ID" value="SEN-09404"/>
-</technology>
-</technologies>
-</device>
-<device name="MQ-6" package="GAS_SENSOR">
-<connects>
-<connect gate="G$1" pin="A1" pad="A1"/>
-<connect gate="G$1" pin="B1" pad="B1"/>
-<connect gate="G$1" pin="H1" pad="HA"/>
-<connect gate="G$1" pin="H2" pad="HB"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="SF_ID" value="SEN-09405"/>
-</technology>
-</technologies>
-</device>
-<device name="MQ-7" package="GAS_SENSOR">
-<connects>
-<connect gate="G$1" pin="A1" pad="A1"/>
-<connect gate="G$1" pin="B1" pad="B1"/>
-<connect gate="G$1" pin="H1" pad="HA"/>
-<connect gate="G$1" pin="H2" pad="HB"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="PROD_ID" value="COMP-12214"/>
-<attribute name="SF_ID" value="SEN-09403"/>
-</technology>
-</technologies>
-</device>
-<device name="MQ-8" package="GAS_SENSOR">
-<connects>
-<connect gate="G$1" pin="A1" pad="A1"/>
-<connect gate="G$1" pin="B1" pad="B1"/>
-<connect gate="G$1" pin="H1" pad="HA"/>
-<connect gate="G$1" pin="H2" pad="HB"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="PROD_ID" value="COMP-13351"/>
-<attribute name="SF_ID" value="SEN-10916"/>
-</technology>
 </technologies>
 </device>
 </devices>
@@ -5010,6 +4863,58 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="GasAlarm">
+<packages>
+<package name="DIP4-MQ_6">
+<pad name="2" x="-1.27" y="-0.635" drill="0.8128" shape="octagon"/>
+<pad name="1" x="-3.81" y="-0.635" drill="0.8128" shape="octagon"/>
+<pad name="3" x="1.27" y="-0.635" drill="0.8128" shape="octagon"/>
+<pad name="4" x="3.81" y="-0.635" drill="0.8128" shape="octagon"/>
+<wire x1="-5.08" y1="1.27" x2="-5.08" y2="-2.54" width="0.1524" layer="21"/>
+<wire x1="-5.08" y1="-2.54" x2="5.08" y2="-2.54" width="0.1524" layer="21"/>
+<wire x1="5.08" y1="-2.54" x2="5.08" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="5.08" y1="1.27" x2="-5.08" y2="1.27" width="0.1524" layer="21"/>
+<text x="-3.81" y="-3.81" size="1.016" layer="21" align="center">AO</text>
+<text x="-1.27" y="-3.81" size="1.016" layer="21" align="center">DO</text>
+<text x="1.27" y="-3.81" size="1.016" layer="21" align="center">GND</text>
+<text x="3.81" y="-3.81" size="1.016" layer="21" align="center">VCC</text>
+</package>
+</packages>
+<symbols>
+<symbol name="MQ-6">
+<wire x1="-10.16" y1="17.78" x2="10.16" y2="17.78" width="0.254" layer="94"/>
+<wire x1="10.16" y1="17.78" x2="10.16" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-10.16" x2="-10.16" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-10.16" x2="-10.16" y2="17.78" width="0.254" layer="94"/>
+<circle x="0" y="7.62" radius="8.032184375" width="0.254" layer="94"/>
+<circle x="0" y="7.62" radius="5.6796125" width="0.254" layer="94"/>
+<pin name="A0" x="-7.62" y="-15.24" length="middle" rot="R90"/>
+<pin name="D0" x="-2.54" y="-15.24" length="middle" rot="R90"/>
+<pin name="GND" x="2.54" y="-15.24" length="middle" rot="R90"/>
+<pin name="VCC" x="7.62" y="-15.24" length="middle" rot="R90"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="MQ-6">
+<gates>
+<gate name="G$1" symbol="MQ-6" x="0" y="-7.62"/>
+</gates>
+<devices>
+<device name="" package="DIP4-MQ_6">
+<connects>
+<connect gate="G$1" pin="A0" pad="1"/>
+<connect gate="G$1" pin="D0" pad="2"/>
+<connect gate="G$1" pin="GND" pad="3"/>
+<connect gate="G$1" pin="VCC" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -5032,9 +4937,9 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="SW_MUTE" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SWITCH_PUSHBUTTON" device="SOFTTOUCHSMD_SJ"/>
-<part name="GS1" library="SparkFun-Sensors" deviceset="GAS_SENSOR" device="MQ-6"/>
 <part name="R1" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-EU_" device="0204/5" package3d_urn="urn:adsk.eagle:package:25955/1" value="1k"/>
 <part name="R2" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-EU_" device="0204/5" package3d_urn="urn:adsk.eagle:package:25955/1" value="1k"/>
+<part name="U$1" library="GasAlarm" deviceset="MQ-6" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5053,9 +4958,9 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <instance part="P+1" gate="VCC" x="27.94" y="101.6"/>
 <instance part="P+2" gate="VCC" x="-55.88" y="58.42"/>
 <instance part="SW_MUTE" gate="G$1" x="-10.16" y="71.12"/>
-<instance part="GS1" gate="G$1" x="-83.82" y="30.48"/>
 <instance part="R1" gate="G$1" x="-22.86" y="71.12"/>
 <instance part="R2" gate="G$1" x="-22.86" y="63.5"/>
+<instance part="U$1" gate="G$1" x="-83.82" y="58.42"/>
 </instances>
 <busses>
 </busses>
@@ -5156,6 +5061,10 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <wire x1="-55.88" y1="55.88" x2="-55.88" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="IC" gate="G$1" pin="VCC"/>
 <wire x1="-55.88" y1="30.48" x2="-33.02" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="VCC"/>
+<wire x1="-55.88" y1="30.48" x2="-76.2" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="-76.2" y1="30.48" x2="-76.2" y2="43.18" width="0.1524" layer="91"/>
+<junction x="-55.88" y="30.48"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -5191,7 +5100,8 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <junction x="0" y="27.94"/>
 <wire x1="0" y1="27.94" x2="0" y2="17.78" width="0.1524" layer="91"/>
 <wire x1="0" y1="17.78" x2="0" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="0" y1="15.24" x2="0" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="0" y1="15.24" x2="0" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="0" y1="12.7" x2="0" y2="10.16" width="0.1524" layer="91"/>
 <wire x1="-40.64" y1="63.5" x2="-40.64" y2="17.78" width="0.1524" layer="91"/>
 <wire x1="-40.64" y1="17.78" x2="0" y2="17.78" width="0.1524" layer="91"/>
 <junction x="0" y="17.78"/>
@@ -5202,6 +5112,10 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <wire x1="-40.64" y1="63.5" x2="-27.94" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="-27.94" y1="71.12" x2="-43.18" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="GND"/>
+<wire x1="-81.28" y1="43.18" x2="-81.28" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="-81.28" y1="12.7" x2="0" y2="12.7" width="0.1524" layer="91"/>
+<junction x="0" y="12.7"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -5233,6 +5147,14 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <pinref part="SW_MUTE" gate="G$1" pin="P$1"/>
 <pinref part="R1" gate="G$1" pin="2"/>
 <wire x1="-15.24" y1="71.12" x2="-17.78" y2="71.12" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$12" class="0">
+<segment>
+<pinref part="IC" gate="G$1" pin="A3"/>
+<pinref part="U$1" gate="G$1" pin="A0"/>
+<wire x1="-33.02" y1="33.02" x2="-91.44" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="-91.44" y1="33.02" x2="-91.44" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
